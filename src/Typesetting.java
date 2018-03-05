@@ -65,7 +65,7 @@ public class Typesetting {
                 continue;
             }
             line.append(str);
-            if (isInCode || str.isEmpty() || i == contents.size() - 1 || contents.get(i + 1).isEmpty()) {
+            if (isInCode || str.isEmpty() || i == contents.size() - 1 || contents.get(i + 1).isEmpty() || contents.get(i + 1).matches("^[-*\\d].*")) {
                 ret.add(line.toString());
                 line = new StringBuilder();
             }
