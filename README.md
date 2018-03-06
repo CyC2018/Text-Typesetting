@@ -12,7 +12,7 @@
 
 ## 2. 去除多余空行
 
-Markdown 文档中连续的多个空行也会被当成一个空行，因此可以去除连续的多于空行，只保留一个。
+Markdown 文档中连续的多个空行也会被当成一个空行，因此可以去除连续的多余空行，只保留一个。
 
 ## 3. 去除尾部空格
 
@@ -57,6 +57,10 @@ mesh number, the surface with 3557 patches will become moreaccurate than that wi
 3. 粘贴新内容到文档中；
 
 Windows 用户可以运行 Text-Typesetting.bat 来运行程序，Mac OS 用户可直接运行 Text-Typesetting.jar 程序。
+
+## 使用技巧
+
+本程序主要是为 Markdown 文档进行排版，但是不仅限于此，只要复制任意的文本源，就能得到经过排版的文本。例如，当需要从英文 PDF 文件中复制一段句子导入到翻译软件中，那么就可以直接复制这段句子，运行程序后得到的就是拼接后的内容。
 
 ## 注意事项
 
