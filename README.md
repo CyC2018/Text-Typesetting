@@ -45,3 +45,11 @@ Markdown 文档中连续的多个空行也会被当成一个空行，因此可�
 3. 粘贴新内容到文档中；
 
 Windows 用户可以运行 Text-Typesetting.bat 来运行程序，Mac OS 用户可直接运行 Text-Typesetting.jar 程序。
+
+## 核心代码
+
+```java
+line = TrimHelper.rTrim(line);
+line = line.replaceAll("([a-zA-Z0-9)'>)}\\]])([\\u4e00-\\u9fa5])","$1 $2");
+line = line.replaceAll("([\\u4e00-\\u9fa5])([a-zA-Z0-9'(<{])","$1 $2");
+```
