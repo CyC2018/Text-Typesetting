@@ -8,43 +8,12 @@ public class Typesetting {
         List<String> ret = new ArrayList<String>();
         for (String line : contents) {
             line = TrimHelper.rTrim(line); // 去除右边多于的空格的空格
-            StringBuilder newLine = new StringBuilder();
-            int n = line.length();
-            for (int i = 0; i < n; i++) {
-                newLine.append(line.charAt(i));
-                if (shouldAddSpace(line, i)) {
-                    newLine.append(" ");
-                }
-            }
-            ret.add(newLine.toString());
+            line = line.replaceAll("([a-zA-Z0-9)'>)}\\]])([\\u4e00-\\u9fa5])","$1 $2");
+            line = line.replaceAll("([\\u4e00-\\u9fa5])([a-zA-Z0-9'(<{])","$1 $2");
+            ret.add(line);
         }
         ret = removeRedundantLine(ret);
         return TextContentHelper.jointLineByLine(ret);
-    }
-
-    private static boolean shouldAddSpace(String line, int index) {
-        if (index == line.length() - 1) {
-            return false;
-        }
-        CharType curType = CharTypeHelper.getCharType(line.charAt(index));
-        CharType nextType = CharTypeHelper.getCharType(line.charAt(index + 1));
-        if (curType == CharType.English && nextType == CharType.Chinses) {
-            // 英文 + 中文
-            return true;
-        }
-        if (curType == CharType.Chinses && nextType == CharType.English) {
-            // 中文 + 英文
-            return true;
-        }
-        if (curType == CharType.Digit && nextType == CharType.Chinses) {
-            // 数字 + 中文
-            return true;
-        }
-        if (curType == CharType.Chinses && nextType == CharType.Digit) {
-            // 中文 + 数字
-            return true;
-        }
-        return false;
     }
 
     /**
