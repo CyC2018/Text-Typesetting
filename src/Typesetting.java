@@ -7,7 +7,7 @@ public class Typesetting {
         List<String> contents = TextContentHelper.cutLineByLine(text);
         List<String> ret = new ArrayList<String>();
         for (String line : contents) {
-            line = TrimHelper.rTrim(line); // 去除右部无用的空格
+            line = TrimHelper.rTrim(line); // 去除右边多于的空格的空格
             StringBuilder newLine = new StringBuilder();
             int n = line.length();
             for (int i = 0; i < n; i++) {
@@ -18,7 +18,6 @@ public class Typesetting {
             }
             ret.add(newLine.toString());
         }
-        ret = removeLinefeed(ret);
         ret = removeRedundantLine(ret);
         return TextContentHelper.jointLineByLine(ret);
     }
@@ -45,32 +44,7 @@ public class Typesetting {
             // 中文 + 数字
             return true;
         }
-
         return false;
-    }
-
-    /**
-     * 去除尾部不正确的换行
-     */
-    private static List<String> removeLinefeed(List<String> contents) {
-        List<String> ret = new ArrayList<String>();
-        boolean isInCode = false;
-        StringBuilder line = new StringBuilder();
-        for (int i = 0; i < contents.size(); i++) {
-            String str = contents.get(i);
-            if (str.contains("```")) {
-                isInCode = !isInCode;
-                line = new StringBuilder();
-                ret.add(str);
-                continue;
-            }
-            line.append(str);
-            if (isInCode || str.isEmpty() || i == contents.size() - 1 || contents.get(i + 1).isEmpty() || contents.get(i + 1).matches("^[-*\\d].*")) {
-                ret.add(line.toString());
-                line = new StringBuilder();
-            }
-        }
-        return ret;
     }
 
     /**
