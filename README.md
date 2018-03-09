@@ -53,3 +53,8 @@ line = TrimHelper.rTrim(line);
 line = line.replaceAll("([a-zA-Z0-9)'>)}\\]])([\\u4e00-\\u9fa5])","$1 $2");
 line = line.replaceAll("([\\u4e00-\\u9fa5])([a-zA-Z0-9'(<{])","$1 $2");
 ```
+
+## TODO
+
+- 用户界面
+- 英文专有名词提示首字母大写
