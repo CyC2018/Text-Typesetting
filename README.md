@@ -1,5 +1,5 @@
 
-[![Scrutinizer Build](https://img.shields.io/scrutinizer/build/g/filp/whoops.svg)](https://github.com/CyC2018) [![GitHub last commit](https://img.shields.io/github/last-commit/google/skia.svg)](https://github.com/CyC2018/Text-Typesetting)
+[![Scrutinizer Build](https://img.shields.io/scrutinizer/build/g/filp/whoops.svg)](https://github.com/CyC2018)
 
 # 功能介绍
 
