@@ -35,7 +35,7 @@ Markdown 文档可以使用 `![]()` 这种方式来引用图片，但是无法�
 
 T<sub>1</sub> 修改一个数据，T<sub>2</sub> 随后读取这个数据。如果 T<sub>1</sub> 撤销了这次修改，那么 T<sub>2</sub> 读取的数据是脏数据。
 
-<img src="pics/2.jpg" width="800"/>
+<img src="pics/2.jpg" width="600"/>
 
 # TODO
 
