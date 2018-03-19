@@ -1,0 +1,15 @@
+/* 页脚 */
+.bs-docs-footer {
+    padding-top: 50px;
+    padding-bottom: 50px;
+    margin-top: 200px;
+    color: #99979c;
+    text-align: center;
+    background-color: #2a2730;
+}
+
+/*页面内容字体*/
+body, button, input, select, textarea {
+    font-family: Helvetica, 'Hiragino Sans GB', 'Microsoft Yahei', '微软雅黑', Arial, sans-serif;
+    background-color: #eee;
+}
