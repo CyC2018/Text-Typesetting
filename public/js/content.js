@@ -18,7 +18,7 @@ $(document).ready(function () {
      * 转换图片
      */
     convertPicBtn.click(function () {
-        var newContent = "<div align="center"> ";
+        var newContent = '<div align="center"> ';
         var picStartString = "![]";
         var content = getInputTextAreaVal();
         var preIdx = 0;
