@@ -18,7 +18,7 @@ $(document).ready(function () {
      * 转换图片
      */
     convertPicBtn.click(function () {
-        var newContent = '<div align="center"> ';
+        var newContent = "";
         var picStartString = "![]";
         var content = getInputTextAreaVal();
         var preIdx = 0;
@@ -35,7 +35,7 @@ $(document).ready(function () {
             curIdx = content.indexOf(picStartString, preIdx);
         }
         newContent += content.substring(preIdx, content.length);
-        newContent += " </div><br>"
+        newContent += 
         setOutputTextAreaVal(newContent);
     });
 
@@ -53,6 +53,6 @@ $(document).ready(function () {
     }
 
     function buildImgPic(picString) {
-        return '<img src="' + picString + '" width=""/>';
+        return '<div align="center">  <img src="' + picString + '" width=""/> </div><br>';
     }
 });
