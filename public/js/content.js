@@ -18,7 +18,7 @@ $(document).ready(function () {
      * 转换图片
      */
     convertPicBtn.click(function () {
-        var newContent = "";
+        var newContent = "<div align="center"> ";
         var picStartString = "![]";
         var content = getInputTextAreaVal();
         var preIdx = 0;
@@ -35,6 +35,7 @@ $(document).ready(function () {
             curIdx = content.indexOf(picStartString, preIdx);
         }
         newContent += content.substring(preIdx, content.length);
+        newContent += " </div><br>"
         setOutputTextAreaVal(newContent);
     });
 
