@@ -18,10 +18,11 @@ body {
 .bs-docs-footer {
     padding-top: 50px;
     padding-bottom: 50px;
-    margin-top: 100px;
+    margin-top: 300px;
     color: #99979c;
     text-align: center;
     background-color: #2a2730;
+    font-size: 16px;
 }
 
 /*页面内容字体*/
