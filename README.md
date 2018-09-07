@@ -1,6 +1,6 @@
 
 <div align="center">
-    <img src="doc/LogoMakr_2OC8au.png" width="400px">
+    <img src="doc/LogoMakr_2OC8au.png" width="300px">
 </div>
 
 # 功能介绍
