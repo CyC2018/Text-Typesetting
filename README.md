@@ -9,7 +9,7 @@
 
 在中文和英文数字之间加上空格可以大大提高文档的可读性，例如以下网站就根据了这一原则进行排版：
 
-- [Laraval China](https://laravel-china.org/)
+- [Laravel China](https://laravel-china.org/)
 - [Apple](https://www.apple.com/cn/)
 - [Microsoft](https://www.microsoft.com/zh-cn/)
 
