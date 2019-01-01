@@ -8,19 +8,40 @@ $(document).ready(function () {
      * 添加空格
      */
     addSpaceBtn.click(function () {
-        var content = getInputTextAreaVal();
+        //每次点击的时候，将当前的元素类动态地添加或删除selected
+        $(this).toggleClass('selected'); 
+
+       var content = getOutputTextAreaVal() == '' ? getInputTextAreaVal() : getOutputTextAreaVal();
+        //选中添加空格功能
+        if ($(this).hasClass('selected')) {
+            setOutputTextAreaVal(addSpace(content));
+        } else {
+            content = getInputTextAreaVal();
+            //取消添加空格功能
+            //保留转换图片功能
+            if (convertPicBtn.hasClass('selected')) {
+                content = changeImg(content);
+            }
+            setOutputTextAreaVal(content);
+        }
+    });
+    /**
+     * 添加空格
+     */
+    function addSpace(content) {
         content = content.replace(/([a-zA-Z0-9)'>)}\]])([\u4e00-\u9fa5])/g, "$1 $2");
         content = content.replace(/([\u4e00-\u9fa5])([a-zA-Z0-9('<{\]])/g, "$1 $2");
-        setOutputTextAreaVal(content);
-    });
+        return content;
+    }
 
     /*
      * 转换图片
      */
-    convertPicBtn.click(function () {
+    function changeImg(content) {
         var newContent = "";
         var picStartString = "![]";
-        var content = getInputTextAreaVal();
+        console.log(content);
+        //var content = getInputTextAreaVal();
         var preIdx = 0;
         var curIdx = content.indexOf(picStartString);
         while (curIdx != -1) {
@@ -35,12 +56,37 @@ $(document).ready(function () {
             curIdx = content.indexOf(picStartString, preIdx);
         }
         newContent += content.substring(preIdx, content.length);
-        newContent += 
-        setOutputTextAreaVal(newContent);
+        return newContent;
+    }
+    
+    /*
+     * 转换图片
+     */
+    convertPicBtn.click(function () {
+        //每次点击的时候，将当前的元素切换selected样式 
+        $(this).toggleClass('selected'); 
+
+        var content = getOutputTextAreaVal() == '' ? getInputTextAreaVal() : getOutputTextAreaVal();
+        //选中转换图片功能
+        if ($(this).hasClass('selected')) {
+            setOutputTextAreaVal(changeImg(content));
+        } else {
+            //取消转换图片功能
+             //是否保留添加空格功能
+             content = getInputTextAreaVal();
+            if (addSpaceBtn.hasClass('selected')) {
+                content = addSpace(content);
+            }
+            setOutputTextAreaVal(content);
+        }
     });
 
     function getInputTextAreaVal() {
         return inputTextarea.val();
+    }
+
+    function getOutputTextAreaVal() {
+        return outputTextarea.val();
     }
 
     function setOutputTextAreaVal(data) {
@@ -55,4 +101,5 @@ $(document).ready(function () {
     function buildImgPic(picString) {
         return '<div align="center">  <img src="' + picString + '" width=""/> </div><br>';
     }
+
 });

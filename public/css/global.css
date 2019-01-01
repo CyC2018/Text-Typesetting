@@ -30,3 +30,7 @@ body, button, input, select, textarea {
     font-family: Helvetica, 'Hiragino Sans GB', 'Microsoft Yahei', '微软雅黑', Arial, sans-serif;
     background-color: #eee;
 }
+
+ .selected{
+    color: red;
+ }
