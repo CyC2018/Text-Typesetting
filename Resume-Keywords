@@ -15,6 +15,8 @@ C#
 
 Spring
 SpringMVC
+SpringBoot
+SpringCloud
 MyBatis
 Hibernate
 Struts2
@@ -38,9 +40,12 @@ SQLite
 JavaScript
 HTML
 CSS
-vue.js
+Vue.js
 jQuery
 BootStrap
+
+# 后端开发
+Node.js
 
 # 移动开发
 
@@ -62,6 +67,7 @@ RocketMQ
 Git
 SVN
 Maven
+Gradle
 
 # 云计算
 
