@@ -84,11 +84,15 @@ $(document).ready(function() {
     }
 
     function findKeyWord(keywords, content) {
+        var res = "";
         for (i in keywords) {
             var kw = keywords[i];
             var kw_l = kw.toLowerCase();
-            if (content.startsWith(kw_l)) return kw;
+            if (content.startsWith(kw_l) && kw.length > res.length) {
+                res = kw;
+            }
         }
+        return res;
     }
 
     function getInputTextAreaVal() {
