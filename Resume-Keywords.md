@@ -3,7 +3,8 @@
 Java
 JDK
 JVM
-C, C++
+C
+C++
 STL
 Golang
 Python
@@ -45,7 +46,9 @@ BootStrap
 # 移动开发
 
 Android
+
 # 中间件
+
 RabbitMQ
 ZooKeeper
 Kafka
