@@ -13,7 +13,13 @@
 - [Apple](https://www.apple.com/cn/)
 - [Microsoft](https://www.microsoft.com/zh-cn/)
 
-## 2. 图片引用转换
+## 2. 修改简历中技术名词的大小写
+
+例如 java->Java。
+
+该功能目前基于技术名词列表实现，名词数量有限，欢迎添加其它技术名词：https://github.com/CyC2018/Text-Typesetting/blob/gh-pages/public/js/content.js
+
+## 3. 图片引用转换
 
 Markdown 文档可以使用 `![]()` 这种方式来引用图片，但是无法设置大小，只有 `<img src="" width=""/>` 才支持设置大小。
 
